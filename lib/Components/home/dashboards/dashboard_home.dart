@@ -1,5 +1,7 @@
+import 'package:animated_container/Components/home/dashboards/dash_column.dart';
 import 'package:animated_container/Components/home/dashboards/dash_new_graphic.dart';
-import 'package:animated_container/Components/home/dashboards/dash_pie_chart.dart';
+import 'package:animated_container/Components/home/dashboards/dash_donut_pie.dart';
+import 'package:animated_container/Components/home/dashboards/dash_pie.dart';
 
 import 'package:animated_container/components/home/dashboards/dash_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +15,12 @@ class DashboardHome extends StatelessWidget {
       children: [
         Row(
           children: [
-            DashWidget(),
+            DashColumn(),
+            //DashWidget(),
             SizedBox(width: 10),
-            PieChart(),
+            DashDonutPie(),
+            SizedBox(width: 10),
+            DashPie(),
             SizedBox(width: 10),
             NewGraphic()
           ],

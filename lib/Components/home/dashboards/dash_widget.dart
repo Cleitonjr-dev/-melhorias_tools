@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 
 class DashWidget extends StatelessWidget {
   final List<Color> gradientColors = [
-    Color.fromARGB(246, 98, 102, 98),
-    Color.fromARGB(255, 230, 21, 6),
+    Color.fromRGBO(255, 0, 0, 1),
+    Color.fromARGB(255, 243, 83, 71),
   ];
 
   @override

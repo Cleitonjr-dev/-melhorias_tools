@@ -19,7 +19,7 @@ class DashTitles {
               case 5:
                 return 'JUN';
               case 8:
-                return 'SEP';
+                return 'SET';
             }
             return '';
           },

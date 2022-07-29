@@ -1,257 +1,59 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
+import 'package:animated_container/Components/home/notifications/card_notifications.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class NotificationHome extends StatelessWidget {
+class NotificationHome extends StatefulWidget {
   const NotificationHome({Key? key}) : super(key: key);
 
   @override
+  State<NotificationHome> createState() => _NotificationHomeState();
+}
+
+class _NotificationHomeState extends State<NotificationHome> {
+  @override
   Widget build(BuildContext context) {
     return Wrap(children: [
-      Container(
-        width: MediaQuery.of(context).size.width * .25,
-        height: MediaQuery.of(context).size.height * .25,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 1),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 3,
-              offset: Offset(1, 1),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      backgroundImage: NetworkImage(
-                          'https://www.woolha.com/media/2020/03/eevee.png'),
-                      radius: 25,
+      Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * .30,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * .25,
+                    height: MediaQuery.of(context).size.height * .30,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 3,
+                          offset: const Offset(1, 1),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                  ),
-                ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
                     child: Text(
-                      'João Paulo\nDesenvolvimento',
+                      [index].toString(),
                       style: TextStyle(
-                        fontSize: 10,
+                        color: Color.fromARGB(255, 202, 6, 6),
+                        fontSize: 36.0,
                       ),
                     ),
                   ),
-                ),
-              ],
+                );
+              },
             ),
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'Bem-vindos ao Portal Tools, confira as novidades na aba do menu superior.',
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Text(
-                      'postado ás 14:37 em 21/07/2022',
-                      style: TextStyle(
-                        fontSize: 8,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // ignore: prefer_const_constructors
-            // ignore: prefer_const_constructors
-          ],
-        ),
-      ),
-      SizedBox(width: 10),
-      Container(
-        width: MediaQuery.of(context).size.width * .25,
-        height: MediaQuery.of(context).size.height * .25,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 1),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 3,
-              offset: Offset(1, 1),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      backgroundImage: NetworkImage(
-                          'https://www.woolha.com/media/2020/03/eevee.png'),
-                      radius: 25,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'João Paulo\nDesenvolvimento',
-                      style: TextStyle(
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'Bem-vindos ao Portal Tools, confira as novidades na aba do menu superior.',
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Text(
-                      'postado ás 14:37 em 21/07/2022',
-                      style: TextStyle(
-                        fontSize: 8,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // ignore: prefer_const_constructors
-            // ignore: prefer_const_constructors
-          ],
-        ),
-      ),
-      SizedBox(width: 10),
-      Container(
-        width: MediaQuery.of(context).size.width * .25,
-        height: MediaQuery.of(context).size.height * .25,
-        decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 1),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 3,
-              offset: Offset(1, 1),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      backgroundImage: NetworkImage(
-                          'https://www.woolha.com/media/2020/03/eevee.png'),
-                      radius: 25,
-                    ),
-                  ),
-                ),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'João Paulo\nDesenvolvimento',
-                      style: TextStyle(
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      'Bem-vindos ao Portal Tools, confira as novidades na aba do menu superior.',
-                      style: TextStyle(
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Text(
-                      'postado ás 14:37 em 21/07/2022',
-                      style: TextStyle(
-                        fontSize: 8,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            // ignore: prefer_const_constructors
-            // ignore: prefer_const_constructors
-          ],
-        ),
+          ),
+        ],
       ),
     ]);
   }

@@ -48,7 +48,7 @@ class GestureRec extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.white,
                 backgroundImage: NetworkImage(
-                    'https://www.woolha.com/media/2020/03/eevee.png'),
+                    'https://www.shareicon.net/data/512x512/2016/08/05/807310_gaming_512x512.png'),
                 radius: 25,
               ),
             ],

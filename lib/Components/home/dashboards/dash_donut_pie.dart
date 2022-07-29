@@ -3,12 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class PieChart extends StatefulWidget {
+class DashDonutPie extends StatefulWidget {
   @override
-  _PieChartState createState() => _PieChartState();
+  _DashDonutPieState createState() => _DashDonutPieState();
 }
 
-class _PieChartState extends State<PieChart> {
+class _DashDonutPieState extends State<DashDonutPie> {
   late List<GDPData> _chartData;
   late TooltipBehavior _tooltipBehavior;
 
@@ -42,6 +42,7 @@ class _PieChartState extends State<PieChart> {
           tooltipBehavior: _tooltipBehavior,
           series: <CircularSeries>[
             DoughnutSeries<GDPData, String>(
+              selectionBehavior: SelectionBehavior(enable: true),
               dataSource: _chartData,
               xValueMapper: (GDPData data, _) => data.continent,
               yValueMapper: (GDPData data, _) => data.gdp,

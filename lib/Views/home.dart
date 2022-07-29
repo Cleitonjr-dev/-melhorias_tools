@@ -1,11 +1,15 @@
+// ignore_for_file: prefer_const_constructors, override_on_non_overriding_member
+
 import 'package:animated_container/Components/home/notifications/notifications_home.dart';
 import 'package:animated_container/Components/home/upper/team_home.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
 import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:animated_container/components/home/dashboards/dashboard_home.dart';
+import 'package:flutter/gestures.dart';
 
 import 'package:flutter/material.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,30 +24,59 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-      body: Container(
-        child: SafeArea(
-          child: Row(
-            children: [
-              select ? GesturePrincipal() : GestureRecolhido(),
-              Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    UpperHome(),
-                    SizedBox(height: 40),
-                    TeamHome(),
-                    SizedBox(height: 40),
-                    DashboardHome(),
-                    SizedBox(height: 40),
-                    NotificationHome(),
-                    SizedBox(height: 40),
-                  ],
-                ),
+      backgroundColor: Color.fromRGBO(239, 239, 239, 1),
+      body: SafeArea(
+        child: Row(
+          children: [
+            select ? GesturePrincipal() : GestureRecolhido(),
+            AnimatedContainer(
+              duration: Duration(seconds: 1),
+              height: MediaQuery.of(context).size.height / 0.9,
+              width: MediaQuery.of(context).size.height / 0.7,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      UpperHome(),
+                    ],
+                  ),
+                  SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      TeamHome(),
+                    ],
+                  ),
+                  SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      DashboardHome(),
+                    ],
+                  ),
+                  SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text('Avisos',
+                          style: TextStyle(
+                              color: Colors.red[600],
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20)),
+                    ],
+                  ),
+                  NotificationHome(),
+                  SizedBox(height: 40),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
