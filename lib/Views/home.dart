@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   NotificationHome(),
-                  SizedBox(height: 40),
+                  SizedBox(height: 1),
                 ],
               ),
             ),

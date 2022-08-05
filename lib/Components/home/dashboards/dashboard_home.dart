@@ -15,13 +15,13 @@ class DashboardHome extends StatelessWidget {
       children: [
         Row(
           children: [
-            DashColumn(),
+            //DashColumn(),
             //DashWidget(),
             SizedBox(width: 10),
             DashDonutPie(),
-            SizedBox(width: 10),
+            SizedBox(width: 15),
             DashPie(),
-            SizedBox(width: 10),
+            SizedBox(width: 20),
             NewGraphic()
           ],
         ),

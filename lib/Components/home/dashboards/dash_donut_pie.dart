@@ -22,8 +22,8 @@ class _DashDonutPieState extends State<DashDonutPie> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width * .20,
-        height: MediaQuery.of(context).size.height * .25,
+        width: MediaQuery.of(context).size.width * .25,
+        height: MediaQuery.of(context).size.height * .30,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(255, 255, 255, 1),
           boxShadow: [

@@ -48,7 +48,7 @@ class GestureRec extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.white,
                 backgroundImage: NetworkImage(
-                    'https://www.shareicon.net/data/512x512/2016/08/05/807310_gaming_512x512.png'),
+                    'https://www.diethelmtravel.com/wp-content/uploads/2016/04/bill-gates-wealthiest-person.jpg'),
                 radius: 25,
               ),
             ],
@@ -73,11 +73,14 @@ class GestureRec extends StatelessWidget {
                   width: 60,
                   height: 50,
                   //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
+                  // ignore: prefer_const_constructors
                   child: TextField(
+                    // ignore: prefer_const_constructors
                     decoration: InputDecoration(
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         hintStyle: TextStyle(color: Colors.grey),
+                        // ignore: prefer_const_constructors
                         suffixIcon: Center(
                           child: Icon(
                             Icons.search,

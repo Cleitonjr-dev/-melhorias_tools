@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:animated_container/Components/home/trajeto/trajeto_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +46,7 @@ class GesturePri extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
                   backgroundImage: NetworkImage(
-                      'https://www.shareicon.net/data/512x512/2016/08/05/807310_gaming_512x512.png'),
+                      'https://www.diethelmtravel.com/wp-content/uploads/2016/04/bill-gates-wealthiest-person.jpg'),
                   radius: 25,
                 ),
               ),
@@ -69,6 +72,7 @@ class GesturePri extends StatelessWidget {
                   height: 40,
                   width: 250,
                   //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
+                  // ignore: prefer_const_constructors
                   child: TextField(
                     decoration: InputDecoration(
                         hintText: 'Pesquisar',
@@ -77,14 +81,14 @@ class GesturePri extends StatelessWidget {
                         focusedBorder: InputBorder.none,
                         hintStyle: TextStyle(color: Colors.grey),
                         contentPadding: EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 14.0),
+                            horizontal: 12.0, vertical: 17.0),
                         suffixIcon: Icon(
                           Icons.search,
                           size: 12.0,
                           color: Colors.grey,
                         )),
                     textDirection: TextDirection.rtl,
-                    textAlign: TextAlign.left,
+                    textAlign: TextAlign.start,
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
@@ -113,7 +117,7 @@ class GesturePri extends StatelessWidget {
 
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
+          child: GridView(
             //physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -121,9 +125,9 @@ class GesturePri extends StatelessWidget {
               crossAxisSpacing: 4.0,
               mainAxisSpacing: 3.0,
             ),
-            itemCount: 7,
-            itemBuilder: (context, int index) {
-              return InkWell(
+
+            children: [
+              InkWell(
                 onTap: () {},
                 child: Container(
                   padding:
@@ -132,10 +136,88 @@ class GesturePri extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
-                  child: Image.asset(images[index]),
+                  child: Image.asset('images/base_de_dados.png'),
                 ),
-              );
-            },
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/jornada.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TrajetoPage()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/trajetos.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/estoque.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/pesquisa.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/tarefas.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/avisos.png'),
+                ),
+              ),
+            ],
           ),
         ),
 
